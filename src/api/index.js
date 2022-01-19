@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const url = 'https://enigmatic-sierra-36050.herokuapp.com/';
+const url = 'https://cinema-save.herokuapp.com/';
 const movie_url = 'movie/'
 const home_url = 'home/'
 const profile_url = 'authentication/profile/'
