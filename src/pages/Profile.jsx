@@ -43,7 +43,8 @@ function Profile() {
     fetch('https://cinema-save.herokuapp.com/authentication/profile/deletepin/', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(props)
+      body: JSON.stringify(props),
+      credentials: 'include'
     }).then((response) => {
       response = response.json()
       return response

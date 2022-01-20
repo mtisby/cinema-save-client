@@ -22,7 +22,8 @@ export const EditBoardPopup = (props) => {
             fetch('https://cinema-save.herokuapp.com/authentication/profile/editboard/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                credentials: 'include'
             }).then((response) => {
                 return response.json()
             })
@@ -37,7 +38,8 @@ export const EditBoardPopup = (props) => {
             fetch('https://cinema-save.herokuapp.com/authentication/profile/deleteboard/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+                body: JSON.stringify(data),
+                credentials: 'include'
             }).then((response) => {
                 return response.json()
             })

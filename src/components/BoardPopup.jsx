@@ -20,7 +20,8 @@ export const BoardPopup = (props) => {
         fetch('https://cinema-save.herokuapp.com/authentication/profile/addboard/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            credentials: 'include'
         }).then((response) => {
             return response.json()
         }).then((response) => { 

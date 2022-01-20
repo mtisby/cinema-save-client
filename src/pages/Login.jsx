@@ -17,7 +17,8 @@ function Login(props) {
         fetch('https://cinema-save.herokuapp.com/authentication/login/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
+            credentials: 'include'
         }).then((response) => {
             console.log('logged in');
             let req = response.json()

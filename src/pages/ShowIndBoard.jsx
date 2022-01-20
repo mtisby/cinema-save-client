@@ -20,7 +20,8 @@ function ShowIndBoard() {
         fetch('https://cinema-save.herokuapp.com/authentication/profile/addpin/', {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(props)
+          body: JSON.stringify(props),
+          credentials: 'include'
         }).then((response) => {
             return response.json()
         }).then((response) => {
@@ -33,7 +34,8 @@ function ShowIndBoard() {
         fetch('https://cinema-save.herokuapp.com/authentication/profile/deletepin/', {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(props)
+          body: JSON.stringify(props),
+          credentials: 'include'
         })
         .then((response) => {
             response = response.json()

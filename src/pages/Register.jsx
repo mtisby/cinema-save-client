@@ -16,7 +16,8 @@ function Register() {
         fetch('https://cinema-save.herokuapp.com/authentication/register/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user),
+            credentials: 'include'
         }).then((response) => {
             console.log('new user added');
             let req = response.json()

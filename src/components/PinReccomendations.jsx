@@ -14,7 +14,8 @@ export const PinReccomendations = (props) => {
     fetch('https://cinema-save.herokuapp.com/movie/id', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id })
+        body: JSON.stringify({ id }),
+        credentials: 'include'
     }).then((response) => {
         let req = response.json()
         return req
@@ -30,7 +31,8 @@ export const PinReccomendations = (props) => {
         fetch('https://cinema-save.herokuapp.com/authentication/profile/addpin/', {
           method: 'POST',
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(props)
+          body: JSON.stringify(props),
+          credentials: 'include'
         }).then((response) => {
           let req = response.json()
           return req

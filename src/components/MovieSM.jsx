@@ -36,7 +36,8 @@ export const MovieSM = (props) => {
         body: JSON.stringify({
           'movie_id': id,
           'user_id': userid
-        })
+        }),
+        credentials: 'include'
       }).then((response) => {
         let req = response.json()
         return req
