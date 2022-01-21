@@ -1,0 +1,83 @@
+html{
+    --off-white: #F0F0F0;
+}
+
+.pgMargin{
+    margin-top: 7em;
+}
+
+.Home-Pg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+.movies-contianer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-container{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 2.5em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 1em;
+    width: 20em;
+
+    text-decoration: none;
+
+    transition: 1.5s;
+}
+
+.poster{
+    margin-top: 2em;
+    width: 15em;
+}
+
+.movie-descrip h5{
+    margin: 0;
+}
+
+.movie-descrip h3{
+    margin: 0;
+}
+
+.save-btn-container{
+    background-image: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1640659135/cinema-save/logo/Movie_Rater_vq22gf.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 4em;
+    height: 4em;
+}
+
+.save-btn{
+    margin: 1em;
+    width: 5em;
+    height: 3em;
+    background-color: transparent;
+    border: none;
+}
+
+.movie-container:hover{
+    box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
+    transform: translateY(-0.25em);
+}
+
+.save-btn-container:hover{
+    cursor: pointer;
+}
