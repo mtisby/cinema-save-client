@@ -4,9 +4,9 @@ function App() {
       <h1>Welcome to Splash Page</h1>
 
       <br/>
-      <a href="/cinema-save-client/register">register</a>
+      <a href="/register">register</a>
       <br/>
-      <a href="/cinema-save-client/login">login</a>
+      <a href="/login">login</a>
       <br />
     </div>
   );
