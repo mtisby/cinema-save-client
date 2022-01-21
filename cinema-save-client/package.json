@@ -1,6 +1,6 @@
 {
   "homepage": "http://mtisby.github.io/cinema-save-client/",
-  "name": "cinema-save",
+  "name": "cinema-save-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
