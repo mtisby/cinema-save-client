@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/cinema-save-client/static/css/main.67fed155.chunk.css",
-    "main.js": "/cinema-save-client/static/js/main.567fcb7d.chunk.js",
-    "main.js.map": "/cinema-save-client/static/js/main.567fcb7d.chunk.js.map",
-    "runtime-main.js": "/cinema-save-client/static/js/runtime-main.b6f5a33b.js",
-    "runtime-main.js.map": "/cinema-save-client/static/js/runtime-main.b6f5a33b.js.map",
-    "static/js/2.f7921a4b.chunk.js": "/cinema-save-client/static/js/2.f7921a4b.chunk.js",
-    "static/js/2.f7921a4b.chunk.js.map": "/cinema-save-client/static/js/2.f7921a4b.chunk.js.map",
+    "main.css": "/cinema-save-client/static/css/main.e79a8fef.css",
+    "main.js": "/cinema-save-client/static/js/main.f0898793.js",
     "index.html": "/cinema-save-client/index.html",
-    "static/css/main.67fed155.chunk.css.map": "/cinema-save-client/static/css/main.67fed155.chunk.css.map",
-    "static/js/2.f7921a4b.chunk.js.LICENSE.txt": "/cinema-save-client/static/js/2.f7921a4b.chunk.js.LICENSE.txt"
+    "main.e79a8fef.css.map": "/cinema-save-client/static/css/main.e79a8fef.css.map",
+    "main.f0898793.js.map": "/cinema-save-client/static/js/main.f0898793.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.b6f5a33b.js",
-    "static/js/2.f7921a4b.chunk.js",
-    "static/css/main.67fed155.chunk.css",
-    "static/js/main.567fcb7d.chunk.js"
+    "static/css/main.e79a8fef.css",
+    "static/js/main.f0898793.js"
   ]
 }
