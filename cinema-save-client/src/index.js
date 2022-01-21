@@ -22,13 +22,13 @@ const rootElement = document.getElementById("root");
 render(
     <HashRouter>
         <Routes>
-          <Route path="/cinema-save-client/" element={<App />} />
-          <Route path="/cinema-save-client/home" element={<Home />} />
-          <Route path="/cinema-save-client/profile/:id" element={<Profile />} />
-          <Route path="/profile/:id/board/:id" element={<ShowIndBoard />} />
-          <Route path="/cinema-save-client/register" element={<Register />} />
-          <Route path="/cinema-save-client/login" element={<Login />} />
-          <Route path="/cinema-save-client/movie/:id" element={<ShowMovie />} />
+          <Route path="/cinema-save-client/" exact element={<App />} />
+          <Route path="/cinema-save-client/home" exact element={<Home />} />
+          <Route path="/cinema-save-client/profile/:id" exact element={<Profile />} />
+          <Route path="/cinema-save-client/profile/:id/board/:id" exact element={<ShowIndBoard />} />
+          <Route path="/cinema-save-client/register" exact element={<Register />} />
+          <Route path="/cinema-save-client/login" exact element={<Login />} />
+          <Route path="/cinema-save-client/movie/:id" exact element={<ShowMovie />} />
         </Routes>
     </HashRouter>,
   rootElement   
