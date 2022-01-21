@@ -17,7 +17,7 @@ let routes = {
     'handleDeleteBoard': baseURL+'authentication/profile/deleteboard/',
     'handleLogin': baseURL+'authentication/login/',
     'handleRegister': baseURL+'/authentication/register/',
-    'handleBaseURL': baseURL
+    'handleBaseURL': 'https://mtisby.github.io/cinema-save-client/'
 }
 
 export {routes}
