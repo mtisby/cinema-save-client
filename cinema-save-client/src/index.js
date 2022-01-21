@@ -20,7 +20,7 @@ import ShowIndBoard from './pages/ShowIndBoard'
 
 const rootElement = document.getElementById("root");
 render(
-    <HashRouter basename='/cinema-save-client/'>
+    <HashRouter basename='https://mtisby.github.io/cinema-save-client/'>
         <Routes>
           <Route exact path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
