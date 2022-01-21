@@ -1,7 +1,6 @@
 let production = true
 let urls = ['http://localhost:3060/', 'https://cinema-save.herokuapp.com/']
 let baseURL;
-console.log('BASE URL: ', baseURL)
 
 if(production === true){
     baseURL = urls[1]

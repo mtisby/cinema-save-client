@@ -43,6 +43,7 @@ export const BoardsProfile = (props) => {
             </div>)
       });
 
+      console.log(allBoards, allBoards.length)
     return (
         <div className='boards-container'>
             {allBoards}
