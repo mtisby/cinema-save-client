@@ -21,29 +21,32 @@ export const BoardsProfile = (props) => {
     }, []);
     
     const allBoards = boards.map((i) => {
-        let bkImg = false;
-        let imgsrc = null;
-        let imgalt = null;
-        
-        if (i.pins[0].poster != '') {
-            imgsrc = i.pins[0].poster;
-            imgalt = i.pins.title
-        } else { 
-            let index = Math.floor(Math.random() * 6)
-            imgsrc = images[index];
-            imgalt = 'theater image';
+        try {
+            let bkImg = false;
+            let imgsrc = null;
+            let imgalt = null;
+            
+            if (i.pins[0].poster != '') {
+                imgsrc = i.pins[0].poster;
+                imgalt = i.pins.title
+            } else { 
+                let index = Math.floor(Math.random() * 6)
+                imgsrc = images[index];
+                imgalt = 'theater image';
+            }
+            
+            return (
+                <div className='board-contianer-profile'>
+                    <img className="poster" src={ imgsrc } alt={ imgalt } />
+                    <Link to={`/profile/${userid}/board/${i._id}`}>
+                        <h3>{ i.title }</h3>
+                    </Link>
+                </div>)
+        } catch (e) {
+           
         }
-        
-        return (
-            <div className='board-contianer-profile'>
-                <img className="poster" src={ imgsrc } alt={ imgalt } />
-                <Link to={`/profile/${userid}/board/${i._id}`}>
-                    <h3>{ i.title }</h3>
-                </Link>
-            </div>)
       });
 
-      console.log(allBoards, allBoards.length)
     return (
         <div className='boards-container'>
             {allBoards}

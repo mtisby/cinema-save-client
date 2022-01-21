@@ -66,7 +66,8 @@ function Profile() {
   }
 
   const allPins = pins.slice(0).reverse().map((i) => {
-      return (
+      try {
+        return (
         <div className='movie-contianer-profile'>
           <img src={i.poster} alt={`${i.title} poster`} className='poster' />
           <div className='movie-descrip'>
@@ -76,7 +77,10 @@ function Profile() {
           </div>
           <br />
           <button className='removeBtn' onClick={() => handleDelete({ 'movieID': i._id, 'userID': userid })}>remove</button>
-        </div>)
+        </div>
+        )} catch (e){
+          
+        }
   });
 
     return (
