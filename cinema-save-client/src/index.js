@@ -20,7 +20,7 @@ import ShowIndBoard from './pages/ShowIndBoard'
 
 const rootElement = document.getElementById("root");
 render(
-    <HashRouter basename='/'>
+    <HashRouter>
         <Routes>
           <Route exact path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
