@@ -6,7 +6,7 @@ function App() {
       <br/>
       <a href="/register">register</a>
       <br/>
-      <a href={process.env.PUBLIC_URL + "/login"}>login</a>
+      <a href="/login">login</a>
       <br />
     </div>
   );
