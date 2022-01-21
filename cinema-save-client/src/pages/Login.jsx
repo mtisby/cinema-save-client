@@ -13,7 +13,6 @@ function Login(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
-        console.log('BASE URL:', routes['handleBaseURL'])
 
         fetch(routes['handleLogin'], {
             method: 'POST',
@@ -47,6 +46,7 @@ function Login(props) {
     <div className="login">
         <div className="welcome">
             <h1>Login</h1> 
+            <p>{routes['handleBaseURL']}</p>
         </div>
         <form onSubmit={handleSubmit.bind(this)}>
             <div className="mb-3">
