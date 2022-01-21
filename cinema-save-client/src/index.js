@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from "react-dom";
 import {
-  HasherRouter,
+  BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -20,7 +20,7 @@ import ShowIndBoard from './pages/ShowIndBoard'
 
 const rootElement = document.getElementById("root");
 render(
-    <HasherRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
@@ -30,6 +30,6 @@ render(
           <Route path="/login" element={<Login />} />
           <Route path="/movie/:id" element={<ShowMovie />} />
         </Routes>
-    </HasherRouter>,
+    </BrowserRouter>,
   rootElement   
 );
