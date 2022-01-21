@@ -22,7 +22,7 @@ const rootElement = document.getElementById("root");
 render(
     <HashRouter>
         <Routes>
-          <Route path={process.env.PUBLIC_URL + "/"} element={<App />} />
+          <Route path="/" element={<App />} />
           <Route path={process.env.PUBLIC_URL + "/home"} element={<Home />} />
           <Route path={process.env.PUBLIC_URL + "/profile/:id"} element={<Profile />} />
           <Route path={process.env.PUBLIC_URL + "/profile/:id/board/:id"} element={<ShowIndBoard />} />
