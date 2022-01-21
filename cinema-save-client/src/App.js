@@ -6,7 +6,7 @@ function App() {
       <br/>
       <a href="/register">register</a>
       <br/>
-      <a href="/login">login</a>
+      <a href="/cinema-save-client/login">login</a>
       <br />
     </div>
   );

@@ -23,11 +23,11 @@ render(
     <HashRouter>
         <Routes>
           <Route exact path="/" element={<App />} />
-          <Route path="/cinema-save-client/home" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/profile/:id/board/:id" element={<ShowIndBoard />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/cinema-save-client/login" element={<Login />} />
           <Route path="/movie/:id" element={<ShowMovie />} />
         </Routes>
     </HashRouter>,
