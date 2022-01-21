@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ReactSession } from 'react-client-session';
 import { Navigate } from 'react-router-dom';
+import { routes } from '../api/routes';
 
 export const BoardPopup = (props) => {
     const [boardname, setBoardName] = useState('');
@@ -11,17 +12,20 @@ export const BoardPopup = (props) => {
 
     const handleSaveButton = () => { 
         console.log(boardname)
+        console.log(routes['handleAddBoard'])
         const data = {
             'title': boardname,
             'description': boarddescrip,
             'userID': userid
         }
 
-        fetch('https://cinema-save.herokuapp.com/authentication/profile/addboard/', {
+        fetch(routes['handleAddBoard'], {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": routes['handleBaseURL']           
+            },
             body: JSON.stringify(data),
-            credentials: 'include'
         }).then((response) => {
             return response.json()
         }).then((response) => { 

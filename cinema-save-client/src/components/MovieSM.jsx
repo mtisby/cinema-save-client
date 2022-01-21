@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from 'react'
 import movieFunctions from "../api/index"
 import { ReactSession } from 'react-client-session';
+import { routes } from "../api/routes";
 
 // style sheets
 import './moviesm.css';
@@ -29,15 +30,19 @@ export const MovieSM = (props) => {
           })
       }, []);
 
-    const handleButtonClick = (e) => {
-      fetch('https://cinema-save.herokuapp.com/authentication/profile/addpin/', {
+    const handleSave = (e) => {
+      let url = routes['handleSave']
+
+      fetch(url, {
         method: 'POST',
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": routes['handleBaseURL']           
+        },
         body: JSON.stringify({
           'movie_id': id,
           'user_id': userid
         }),
-        credentials: 'include'
       }).then((response) => {
         let req = response.json()
         return req
@@ -68,7 +73,7 @@ export const MovieSM = (props) => {
           <div className="movie-container-row">
             <div className="div-left">
               <img className="poster" src={movie.poster} alt={`${movie.title} poster`} />
-              <div className='save-btn-container'><button className='save-btn' onClick={() => handleButtonClick({ 'movieID': movie._id, 'userID': userid })}></button></div>
+              <div className='save-btn-container'><button className='save-btn' onClick={() => handleSave({ 'movieID': movie._id, 'userID': userid })}></button></div>
             </div>
             <div className="movie-desrip-show">
               <h1>{movie.title}</h1>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, Link } from 'react-router-dom';
 import movieFunctions from "../api/index.js"
 import { MovieSM } from '../components/MovieSM';
+import { routes } from '../api/routes.js';
 
 // style sheets
 import '../pages/home.css';
@@ -11,11 +12,13 @@ export const PinReccomendations = (props) => {
     const handleMovieID = (props) => {
     const id = props;
           
-    fetch('https://cinema-save.herokuapp.com/movie/id', {
+    fetch(routes['handleMovieID'], {
         method: 'POST',
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": routes['handleBaseURL']           
+        },
         body: JSON.stringify({ id }),
-        credentials: 'include'
     }).then((response) => {
         let req = response.json()
         return req
@@ -26,13 +29,15 @@ export const PinReccomendations = (props) => {
     })
     }
       
-    const handleButtonClick = (props) => {
-          
-        fetch('https://cinema-save.herokuapp.com/authentication/profile/addpin/', {
+    const handleSave = (props) => {
+        let url = routes['handleSave']
+        fetch(url, {
           method: 'POST',
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": routes['handleBaseURL']           
+          },
           body: JSON.stringify(props),
-          credentials: 'include'
         }).then((response) => {
           let req = response.json()
           return req
@@ -74,7 +79,7 @@ export const PinReccomendations = (props) => {
                     <h5>imdb: { i.imdbRating } </h5>
                     <h5>genre(s): { i.genre } </h5>
                 </div>
-                <div className='save-btn-container'><button className='save-btn' onClick={() => handleButtonClick({ 'movieID': i._id, 'userID': userid })}></button></div>
+                <div className='save-btn-container'><button className='save-btn' onClick={() => handleSave({ 'movieID': i._id, 'userID': userid })}></button></div>
             </div>)
     });
     

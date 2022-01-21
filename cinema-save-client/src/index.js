@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from "react-dom";
 import {
-  HashRouter,
+  BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -20,9 +20,9 @@ import ShowIndBoard from './pages/ShowIndBoard'
 
 const rootElement = document.getElementById("root");
 render(
-    <HashRouter>
+    <BrowserRouter basename='/cinema-save-client'>
         <Routes>
-          <Route exact path="/" element={<App />} />
+          <Route path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/profile/:id/board/:id" element={<ShowIndBoard />} />
@@ -30,6 +30,6 @@ render(
           <Route path="/login" element={<Login />} />
           <Route path="/movie/:id" element={<ShowMovie />} />
         </Routes>
-    </HashRouter>,
+    </BrowserRouter>,
   rootElement   
 );

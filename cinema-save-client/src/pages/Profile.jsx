@@ -5,6 +5,7 @@ import movieFunctions from "../api/index.js";
 import { BoardPopup } from '../components/BoardPopup.jsx';
 import { BoardsProfile } from '../components/BoardsProfile';
 import { Navbar } from '../components/Navbar.jsx';
+import { routes } from '../api/routes.js';
 
 // style sheets
 import './profile.css';
@@ -38,13 +39,15 @@ function Profile() {
     navigator.clipboard.writeText(userProfileLink.value);
   }
 
-  const handleButtonClick = (props) => {
-    
-    fetch('https://cinema-save.herokuapp.com/authentication/profile/deletepin/', {
+  const handleDelete = (props) => {
+    let url = routes['handleDelete']
+    fetch(url, {
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": routes['handleBaseURL']           
+      },
       body: JSON.stringify(props),
-      credentials: 'include'
     }).then((response) => {
       response = response.json()
       return response
@@ -58,7 +61,7 @@ function Profile() {
     })
   }
 
-  const handleAddButton = () => {
+  const handleSave = () => {
     setPopupVal(true)
   }
 
@@ -72,7 +75,7 @@ function Profile() {
             <h5>genre(s): {i.genre} </h5>
           </div>
           <br />
-          <button className='removeBtn' onClick={() => handleButtonClick({ 'movieID': i._id, 'userID': userid })}>remove</button>
+          <button className='removeBtn' onClick={() => handleDelete({ 'movieID': i._id, 'userID': userid })}>remove</button>
         </div>)
   });
 
@@ -92,7 +95,7 @@ function Profile() {
             <div>
               <h3>Boards</h3>
             </div>
-            <div><button className='addBtn' onClick={handleAddButton} >+</button></div>
+            <div><button className='addBtn' onClick={handleSave} >+</button></div>
           </div>
           <BoardsProfile data={ userid } />
           <BoardPopup value={ popupval } />

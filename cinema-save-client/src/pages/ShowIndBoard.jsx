@@ -4,6 +4,7 @@ import movieFunctions from "../api/index.js";
 import { EditBoardPopup } from '../components/EditBoardPopup.jsx';
 import { Navbar } from '../components/Navbar.jsx';
 import { PinReccomendations } from '../components/PinReccomendations.jsx';
+import { routes } from '../api/routes.js';
 
 // style sheets
 import './profile.css';
@@ -14,14 +15,17 @@ function ShowIndBoard() {
     const [board, setBoard] = useState([]);
     const [pins, setPins] = useState([]);
     const [showPopup, setShowPopup] = useState(Boolean);
+    
 
     const handleSave = (props) => {
-
-        fetch('https://cinema-save.herokuapp.com/authentication/profile/addpin/', {
+        let url = routes['handleSave']
+        fetch(url, {
           method: 'POST',
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": routes['handleBaseURL']           
+          },
           body: JSON.stringify(props),
-          credentials: 'include'
         }).then((response) => {
             return response.json()
         }).then((response) => {
@@ -30,12 +34,14 @@ function ShowIndBoard() {
     }
 
     const handleRemove = (props) => {
-
-        fetch('https://cinema-save.herokuapp.com/authentication/profile/deletepin/', {
+        let url = routes['handleDelete']
+        fetch(url, {
           method: 'POST',
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": routes['handleBaseURL']           
+         },
           body: JSON.stringify(props),
-          credentials: 'include'
         })
         .then((response) => {
             response = response.json()

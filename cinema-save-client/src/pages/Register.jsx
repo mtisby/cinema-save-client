@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
+import {routes} from "../api/routes.js"
 
 function Register() {
-    
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -12,12 +12,15 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, email, password };
+        let url = routes['handleRegister']
 
-        fetch('https://cinema-save.herokuapp.com/authentication/register/', {
+        fetch(url, {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": routes['handleBaseURL']           
+            },
             body: JSON.stringify(user),
-            credentials: 'include'
         }).then((response) => {
             console.log('new user added');
             let req = response.json()

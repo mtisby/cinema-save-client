@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ReactSession } from 'react-client-session';
+import { routes } from '../api/routes';
 
 export const EditBoardPopup = (props) => {
     const [boardname, setBoardName] = useState('');
@@ -11,7 +12,7 @@ export const EditBoardPopup = (props) => {
     let data = props.data;
 
     if (showPopup) {
-        const handleSaveButton = () => { 
+        const handleSave = () => { 
             const data = {
                 'userID': userid,
                 'boardID': boardID,
@@ -19,11 +20,13 @@ export const EditBoardPopup = (props) => {
                 'description': boarddescrip
             }
     
-            fetch('https://cinema-save.herokuapp.com/authentication/profile/editboard/', {
+            fetch(routes['handleEditBoard'], {
                 method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-                credentials: 'include'
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": routes['handleBaseURL']           
+                },
+                body: JSON.stringify(data)
             }).then((response) => {
                 return response.json()
             })
@@ -35,11 +38,13 @@ export const EditBoardPopup = (props) => {
                 'boardID': boardID,
             }
     
-            fetch('https://cinema-save.herokuapp.com/authentication/profile/deleteboard/', {
+            fetch(routes['handleDeleteBoard'], {
                 method: 'POST',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-                credentials: 'include'
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": routes['handleBaseURL']           
+                },
+                body: JSON.stringify(data)
             }).then((response) => {
                 return response.json()
             })
@@ -67,7 +72,7 @@ export const EditBoardPopup = (props) => {
                     />
                     <br />
                     <br />
-                    <button onClick={handleSaveButton}> save </button>
+                    <button onClick={handleSave}> save </button>
                 </div>
             </div>
         )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom';
-
+import { routes } from '../api/routes';
 import {ReactSession} from 'react-client-session';
 
 
@@ -9,16 +9,18 @@ function Login(props) {
     const [password, setPassword] = useState('');
     const [loggedin, setLogin] = useState(false);
     const [id, setID] = useState('');
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const user = { username, password };
 
-        fetch('https://cinema-save.herokuapp.com/authentication/login/', {
+        fetch(routes['handleLogin'], {
             method: 'POST',
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": routes['handleBaseURL']           
+            },
             body: JSON.stringify(user),
-            credentials: 'include'
         }).then((response) => {
             console.log('logged in');
             let req = response.json()
@@ -42,14 +44,14 @@ function Login(props) {
   
   return (
     <div className="login">
-        <div class="welcome">
+        <div className="welcome">
             <h1>Login</h1> 
         </div>
         <form onSubmit={handleSubmit.bind(this)}>
-            <div class="mb-3">
-                <label class="form-label">Username</label>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="username">Username</label>
                 <input
-                      class="form-control"
+                      className="form-control"
                       type="text"
                       id="username"
                       name="username"
@@ -57,10 +59,10 @@ function Login(props) {
                       onChange={(e) => setUsername(e.target.value)}
                   />
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="password">Password</label>
                 <input
-                      class="form-control"
+                      className="form-control"
                       type="password"
                       id="password"
                       name="password"
@@ -68,7 +70,7 @@ function Login(props) {
                       onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
-            <button class="btn btn-success">Login</button>
+            <button className="btn btn-success">Login</button>
           </form>
     </div>
   );
