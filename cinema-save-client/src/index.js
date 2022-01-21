@@ -20,7 +20,7 @@ import ShowIndBoard from './pages/ShowIndBoard'
 
 const rootElement = document.getElementById("root");
 render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
