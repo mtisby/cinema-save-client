@@ -6,11 +6,11 @@ function App() {
       <h1>Welcome to Splash Page</h1>
 
       <br/>
-      <Link className='navbar-link' to="/register">
+      <Link to="/register">
           <p>Register</p>
       </Link>
       <br/>
-      <Link className='navbar-link' to="/login">
+      <Link to="/login">
           <p>Login</p>
       </Link>
       <br />

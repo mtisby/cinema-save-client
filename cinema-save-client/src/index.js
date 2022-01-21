@@ -27,7 +27,7 @@ render(
           <Route path="/profile/:id" element={<Profile />} />
           <Route path="/profile/:id/board/:id" element={<ShowIndBoard />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/cinema-save-client/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/movie/:id" element={<ShowMovie />} />
         </Routes>
     </HashRouter>,
