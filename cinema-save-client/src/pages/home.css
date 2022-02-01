@@ -65,6 +65,10 @@ html{
     height: 4em;
 }
 
+.save-btn-container:hover{
+    cursor: pointer;
+}
+
 .save-btn{
     margin: 1em;
     width: 5em;
