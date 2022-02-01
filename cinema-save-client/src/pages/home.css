@@ -70,7 +70,6 @@ html{
 }
 
 .save-btn{
-    margin: 1em;
     width: 5em;
     height: 3em;
     background-color: transparent;
@@ -80,8 +79,4 @@ html{
 .movie-container:hover{
     box-shadow: 0 0 50px rgba(80, 80, 80, 0.657);
     transform: translateY(-0.25em);
-}
-
-.save-btn-container:hover{
-    cursor: pointer;
 }

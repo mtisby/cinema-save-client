@@ -31,6 +31,7 @@ export const PinReccomendations = (props) => {
       
     const handleSave = (props) => {
         let url = routes['handleSave']
+        console.log(url)
         fetch(url, {
           method: 'POST',
           headers: { 

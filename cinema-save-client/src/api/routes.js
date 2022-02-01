@@ -9,7 +9,7 @@ if(production === true){
 }
 
 let routes = {
-    'handleSave': baseURL+'authentication/profile/deleteboard/',
+    'handleSave': baseURL+'authentication/profile/addpin/',
     'handleDelete': baseURL+'authentication/profile/deletepin/',
     'handleMovieID': baseURL+'movie/id',
     'handleAddBoard': baseURL+'authentication/profile/addboard/',
