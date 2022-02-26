@@ -1,7 +1,16 @@
 
 import axios from 'axios';
 
-const url = 'https://cinema-save.herokuapp.com/';
+let production = false;
+let urls = ['http://localhost:3060/', 'https://cinema-save.herokuapp.com/']
+let url;
+
+if(production === true){
+    url = urls[1]
+} else {
+    url = urls[0]
+}
+
 const movie_url = 'movie/'
 const home_url = 'home/'
 const profile_url = 'authentication/profile/'

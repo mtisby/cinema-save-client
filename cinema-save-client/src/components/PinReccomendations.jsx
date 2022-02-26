@@ -55,6 +55,7 @@ export const PinReccomendations = (props) => {
         .getAll(userid)
         .then((response) => {
           console.log('promise fulfilled')
+          console.log(response)
           setMovies(response.data)
           setMovieSubset(response.data.splice(0, 50));
           setSubsetSlice(50);

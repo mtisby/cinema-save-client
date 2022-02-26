@@ -1,4 +1,4 @@
-let production = true
+let production = false;
 let urls = ['http://localhost:3060/', 'https://cinema-save.herokuapp.com/']
 let baseURL;
 
