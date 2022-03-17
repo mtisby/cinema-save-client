@@ -3,6 +3,8 @@ import { Navigate } from 'react-router-dom';
 import { routes } from '../api/routes';
 import {ReactSession} from 'react-client-session';
 
+import "./authentication.css"
+
 
 function Login(props) {
     const [username, setUsername] = useState('');
@@ -43,35 +45,37 @@ function Login(props) {
     }
   
   return (
-    <div className="login">
-        <div className="welcome">
-            <h1>Login</h1> 
+    <div className="authpg flex-col-center">
+        <div className='authdiv flex-col-center'>
+            <div className="welcome">
+                <h1>Login</h1>
+            </div>
+            <form onSubmit={handleSubmit.bind(this)} className=".flex-col-center form-div">
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="username">Username</label>
+                    <input
+                          className="form-control"
+                          type="text"
+                          id="username"
+                          name="username"
+                          required
+                          onChange={(e) => setUsername(e.target.value)}
+                      />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="password">Password</label>
+                    <input
+                          className="form-control"
+                          type="password"
+                          id="password"
+                          name="password"
+                          required
+                          onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className='btn'><button className="btn btn-success">Login</button></div>
+              </form>
         </div>
-        <form onSubmit={handleSubmit.bind(this)}>
-            <div className="mb-3">
-                <label className="form-label" htmlFor="username">Username</label>
-                <input
-                      className="form-control"
-                      type="text"
-                      id="username"
-                      name="username"
-                      required
-                      onChange={(e) => setUsername(e.target.value)}
-                  />
-            </div>
-            <div className="mb-3">
-                <label className="form-label" htmlFor="password">Password</label>
-                <input
-                      className="form-control"
-                      type="password"
-                      id="password"
-                      name="password"
-                      required
-                      onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
-            <button className="btn btn-success">Login</button>
-          </form>
     </div>
   );
 }

@@ -1,0 +1,32 @@
+.authpg{
+    margin: 2em;
+}
+
+.authdiv{
+    background: #FFD797;
+    border: 2px solid #FFD797;
+    border-radius: 2.5em;
+
+    width: 40vw;
+}
+
+.form-div div{
+    margin: .5em;
+}
+
+.btn{
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-div label{
+    margin-right: .5em;
+}
+
+.flex-row-end{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

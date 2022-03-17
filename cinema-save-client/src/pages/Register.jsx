@@ -40,46 +40,48 @@ function Register() {
     }
 
   return (
-    <div className="register">
-        <div class="welcome">
-            <h1>Register</h1> 
+    <div className="authpg register flex-col-center">
+        <div className='authdiv flex-col-center'>
+            <div class="welcome">
+                <h1>Register</h1>
+            </div>
+            <form onSubmit={handleSubmit} className="form-div">
+                <div class="mb-3 flex-row-end">
+                    <label class="form-label">Username</label>
+                    <input
+                          class="form-control"
+                          type="text"
+                          id="username"
+                          name="username"
+                          required
+                          onChange={(e) => setUsername(e.target.value)}
+                      />
+                </div>
+                <div class="mb-3 flex-row-end">
+                    <label class="form-label" for="email">Email</label>
+                    <input
+                          class="form-control"
+                          type="email"
+                          id="email"
+                          name="email"
+                          required
+                          onChange={(e) => setEmail(e.target.value)}
+                      />
+                </div>
+                <div class="mb-3 flex-row-end">
+                    <label class="form-label" for="password">Password</label>
+                    <input
+                          class="form-control"
+                          type="password"
+                          id="password"
+                          name="password"
+                          required
+                          onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className='btn'><button class="btn btn-success">Register</button></div>
+            </form>
         </div>
-        <form onSubmit={handleSubmit}>
-            <div class="mb-3">
-                <label class="form-label">Username</label>
-                <input
-                      class="form-control"
-                      type="text"
-                      id="username"
-                      name="username"
-                      required
-                      onChange={(e) => setUsername(e.target.value)}
-                  />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="email">Email</label>
-                <input
-                      class="form-control"
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      onChange={(e) => setEmail(e.target.value)}
-                  />
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="password">Password</label>
-                <input
-                      class="form-control"
-                      type="password"
-                      id="password"
-                      name="password"
-                      required
-                      onChange={(e) => setPassword(e.target.value)}
-                />
-            </div>
-            <button class="btn btn-success">Register</button>
-        </form>
     </div>
   );
 }
