@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 import "./App.css"
+import {DatePickMe} from '../src/components/datepicker'
 
 function App() {
   return (
     <div className="App flex-col-center">
       <div className='shadow'></div>
       <div className='app-bgimg flex-col-top'></div>
+
+      <DatePickMe />
 
       <div className='content'>
         <h1>Welcome to Cinema Save</h1>
