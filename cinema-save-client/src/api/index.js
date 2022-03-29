@@ -1,11 +1,10 @@
-
 import axios from 'axios';
 
-let production = false;
+let production = true;
 let urls = ['http://localhost:3060/', 'https://cinema-save.herokuapp.com/']
 let url;
 
-if(production === true){
+if (production === true) {
     url = urls[1]
 } else {
     url = urls[0]
@@ -18,25 +17,25 @@ const board_url = 'getboard/'
 const board_id_url = 'getboard/id'
 
 const getAll = (user_id) => {
-    return axios.post(url+home_url, {userid: user_id})
+    return axios.post(url + home_url, { userid: user_id })
 }
 
 const getByID = (movie_id, user_id) => {
     let new_url = url + movie_url + movie_id
-    return axios.post(new_url, {movie_id, user_id})
+    return axios.post(new_url, { movie_id, user_id })
 }
 
-const getProfile = (user_id, board_id) => { 
-    return axios.post(url+profile_url, {user_id, board_id})
+const getProfile = (user_id, board_id) => {
+    return axios.post(url + profile_url, { user_id, board_id })
 }
 
-const getProfileBoards = (user_id) => { 
-    return axios.post(url+profile_url+board_url, {user_id})
+const getProfileBoards = (user_id) => {
+    return axios.post(url + profile_url + board_url, { user_id })
 }
 
-const getProfileBoard = (user_id, board_id) => { 
-    return axios.post(url+profile_url+board_id_url, {user_id, board_id})
+const getProfileBoard = (user_id, board_id) => {
+    return axios.post(url + profile_url + board_id_url, { user_id, board_id })
 }
 
 
-export default { getAll, getByID, getProfile, getProfileBoards, getProfileBoard}
+export default { getAll, getByID, getProfile, getProfileBoards, getProfileBoard }
