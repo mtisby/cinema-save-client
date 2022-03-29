@@ -62,16 +62,6 @@ export const PinReccomendations = (props) => {
         })
     }, []);
 
-    const handleLoadMore = () =>{
-      let newSubset = subsetSlice + 50;
-      let newMovies = movie.slice(subsetSlice, newSubset) 
-
-      if(newSubset < movie.length){
-        setSubsetSlice(newSubset)
-        setMovieSubset(newMovies)
-      }
-    }
-
     const movies = moveieSubset.map((i) => {
         return (
             <div className='movie-container'>
@@ -90,8 +80,6 @@ export const PinReccomendations = (props) => {
           <div className='movies-contianer'>
               { movies }
           </div>
-
-          <button onClick={handleLoadMore}>Load More</button>
         </div>
     )
 }
