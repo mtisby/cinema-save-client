@@ -1,70 +1,66 @@
-html{
+html {
     --bgimageurl1: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1646083912/cinema-save/Screen_Shot_2022-02-28_at_1.24.56_PM_xme4fb.png');
     --bgimageurl2: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1646084100/cinema-save/Screen_Shot_2022-02-28_at_1.34.44_PM_ujfi2s.png');
     --bgimageurl3: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1646084449/cinema-save/Screen_Shot_2022-02-28_at_1.40.08_PM_mjfsyi.png');
-    --bgimageurl4: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1646086153/cinema-save/Movie_Rater_cy42hn.png')    
-
+    --bgimageurl4: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1646086153/cinema-save/Movie_Rater_cy42hn.png');
+    --bgimageurl5: url('https://res.cloudinary.com/dr0ofxgkz/image/upload/v1648517449/cinema-save/Screen_Shot_2022-03-28_at_6.30.22_PM_c7f7pu.png')
 }
 
-.flex-col-center{
+.flex-col-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.flex-row-center{
+.flex-row-center {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.flex-col-top{
+.flex-col-top {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
 
-.shadow{
+.shadow {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: #2E2E2E1e;
     top: 0;
     left: 0;
-
     z-index: 3;
 }
 
-.app-bgimg{
+.app-bgimg {
     height: 100vh;
     width: 80vw;
-    background-image: var(--bgimageurl3);
-    background-size: contain;
+    background-image: var(--bgimageurl5);
+    background-size: cover;
     background-repeat: no-repeat;
-
     z-index: 1;
 }
 
-.content{
+.content {
     background-color: white;
     border: 1px solid white;
     height: 20vh;
     border-radius: 2.5em;
     padding: 3em;
     text-align: center;
-
     z-index: 4;
     position: absolute;
 }
 
-.splash-link{
+.splash-link {
     text-decoration: none;
     font-weight: bold;
     background-color: #FFD797;
-
     margin: 1em;
     margin-top: 3em;
     padding: 0 2em;
@@ -73,13 +69,13 @@ html{
     width: 5em;
 }
 
-.splash-link a{
+.splash-link a {
     text-decoration: none;
     color: black;
     transition: .5s;
 }
 
-.splash-link a:hover{
+.splash-link a:hover {
     cursor: pointer;
     color: white;
 }
